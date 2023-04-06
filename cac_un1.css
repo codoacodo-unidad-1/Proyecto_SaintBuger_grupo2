@@ -1,0 +1,131 @@
+body {
+    background-image: url("Img/Fondo.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+header {
+    display: flex;
+    width: 100%;
+     flex-wrap: nowrap;
+     align-items: center;
+}
+
+li {
+    font-style: italic;
+}
+
+div p {
+    font-size: large;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+h2 {
+    font-weight: lighter;
+}
+
+#Grid_Container {
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "aside main main"
+    "aside main main"
+    "footer footer footer";
+    grid-template-rows: 45px repeat(2, 1fr) 20px;
+    grid-template-columns: 50px 1fr 1fr ;
+    height: 100%;
+}
+
+#Grid__Header {
+    grid-area: header;
+}
+
+#LogoImagen {
+    
+    display: inline-flex;
+    flex-direction: raw;
+    flex-wrap: nowrap;
+    
+
+}
+#LogoImagen-I {
+    display: inline-flex;
+    flex-direction: raw;
+    flex-wrap: nowrap;
+}
+#LogoImagen-L {
+    display: inline-flex;
+    flex-direction: raw;
+    flex-wrap: nowrap;
+   /* background: rgba(0, 0, 200, .6);*/
+    border-radius: 40%;
+
+}
+
+#Menu {
+}
+
+
+#Nav__ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.Nav__li {
+    display: inline-block;
+    list-style: none;
+}
+
+
+.Nav__li a {
+    Color: rgb(0,0,0);
+    text-decoration: none;
+    font-size: 22px;
+    font-family: arial;
+    padding: 5px;
+    background: #66B5;
+    border-radius: 40%;
+    margin: 5px 5px 0;
+}
+
+.Nav__li a:hover {
+    color: #000;
+    background: #fff7;
+
+}
+
+
+
+#Grid__Main {
+    padding-top: 40px;
+    grid-area: main;
+    font-size: 20px;
+    color: #fff;   
+}
+
+.Secciones {
+    margin: 10px;
+}
+
+
+
+
+#Grid__Aside {
+    grid-area: aside;
+    background: #1117;
+    color:  #eee;
+}
+#Grid__Footer {
+    grid-area: footer;
+    background: #aaa;
+}
+
+
+.SB {
+    color: darkkhaki;
+    font-size: 40px;
+}
