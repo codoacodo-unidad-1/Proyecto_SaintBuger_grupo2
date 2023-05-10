@@ -42,12 +42,14 @@ h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     padding: 10px;
+    border: 2px solid transparent;
 }
 .nav-bar a:hover{
-    border: 1px solid darkkhaki;
-    background-color: transparent;
+    border: 2px solid darkkhaki;
     border-radius: 10px;
+    background-color: rgba(189, 183, 107, 0.2);
 }
+
 .nav2-container{
     display: flex;
     justify-content: center;
@@ -137,5 +139,10 @@ p{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 0.8rem;
     display: inline;
+}
+.descripcion-flex span{
+    display: inline;
+    text-align: right;
+    align-items:center
 }
 
