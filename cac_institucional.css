@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    background-color: rgb(244, 242, 245);
+}
+
+.cabecera {
+    background-color: #282b30;
+    padding: 18px;
+    max-height: 250px;
+
+}
+
+
+.cabecera a {
+    color: darkkhaki;
+    padding: .4rem;
+    text-decoration: none;
+    font-size: 5vw;
+
+}
+
+.cabecera nav li:hover {
+    border: 1px solid rgb(78, 78, 58);
+    background-color: rgb(53, 55, 54);
+    transition: all 0.5s linear;
+}
+
+.menu_nav {
+    display: flex;
+    text-decoration: none;
+}
+
+.menu_nav ul li {
+    display: inline-block;
+    text-shadow: none;
+    font-size: .2rem;
+    /*align-items: center;*/
+}
+
+.menu_nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    position: relative;
+}
+
+.menu_nav li a {
+    display: block;
+    padding: 0.2rem .9rem;
+    font-size: 1vw;
+}
+
+.icono {
+    display: flex;
+    padding-left: 2px;
+    padding-top: 11px;
+}
+
+.icono img {
+    width: 4vw;
+    height: 4vw;
+}
+.icono_2 {
+    display: flex;
+    padding-right: 2px;
+    padding-top: 11px;
+}
+.icono_2 img {
+    width: 4vw;
+    height: 4vw
+}
+.logo p{
+    font-size: 1.5vw;
+    padding-left: 50px;
+}
+
+.contenedor div {
+    background-color: rgb(246, 244, 240);
+    padding: 0.2em;
+}
+
+.contenedor div:hover {
+    border: 1px solid rgb(78, 78, 58);
+    /*background-color: rgb(53, 55, 54);*/
+    transition: all 0.7s linear;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 170                                                                                                                                                                                                                                                                                         px 300px 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.5vw;
+
+
+}
+
+.item1 {
+    position: relative;
+}
+
+.foto {
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+
+}
+
+
+.footer_class {
+    display: flex;
+    background-color: #282b30;
+    font-size: 1.5vw;
+    height: 20vw;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0px;
+    width: 100%;
+    color: darkkhaki;
+
+}
+
+.footer_class p:hover {
+    border: 1px solid rgb(244, 5, 5);
+    background-color: rgb(21, 26, 23);
+    transition: all 0.5s linear;
+
+}
+
+
+@media screen {ma
+    
+}
