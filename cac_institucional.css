@@ -5,13 +5,16 @@
 
 body {
     margin: 0;
-    background-color: rgb(244, 242, 245);
+    background-color: rgb(106, 99, 86);
 }
 
 .cabecera {
+    left: 0;
+    top: 0;
     background-color: #282b30;
-    padding: 18px;
-    max-height: 250px;
+    padding: .1px;
+    padding-left: 11%;
+    max-height: 40px;
 
 }
 
@@ -25,14 +28,14 @@ body {
 }
 
 .cabecera nav li:hover {
-    border: 1px solid rgb(78, 78, 58);
     background-color: rgb(53, 55, 54);
-    transition: all 0.5s linear;
+    transition: all 0.8s linear;
 }
 
 .menu_nav {
     display: flex;
     text-decoration: none;
+    padding-block: 1;
 }
 
 .menu_nav ul li {
@@ -52,13 +55,14 @@ body {
 
 .menu_nav li a {
     display: block;
-    padding: 0.2rem .9rem;
+    padding: 5px;
     font-size: 1vw;
+
 }
 
 .icono {
     display: flex;
-    padding-left: 2px;
+    padding-left: 15px;
     padding-top: 11px;
 }
 
@@ -66,68 +70,76 @@ body {
     width: 4vw;
     height: 4vw;
 }
+
 .icono_2 {
     display: flex;
     padding-right: 2px;
     padding-top: 11px;
 }
+
 .icono_2 img {
     width: 4vw;
     height: 4vw
 }
-.logo p{
+
+.logo p {
     font-size: 1.5vw;
     padding-left: 50px;
 }
 
 .contenedor div {
-    background-color: rgb(246, 244, 240);
-    padding: 0.2em;
+    background-color: rgb(106, 99, 86);
+    padding: 1em;
 }
 
 .contenedor div:hover {
-    border: 1px solid rgb(78, 78, 58);
-    /*background-color: rgb(53, 55, 54);*/
+    border: 3px solid rgb(246, 244, 244);
+    background-color: rgb(53, 55, 54);
     transition: all 0.7s linear;
+    border-radius: 5px;
 }
 
 .contenedor {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 170                                                                                                                                                                                                                                                                                         px 300px 50px;
+    grid-template-rows: auto auto auto;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 1.5vw;
-
-
 }
 
-.item1 {
-    position: relative;
+.item1 p {
+    padding: 3vw;
+    gap: 0;
+    color: darkkhaki;
+
+
 }
 
 .foto {
-    width: 100%;
+    padding-left: 10px;
+    width: 90%;
     position: relative;
     object-fit: cover;
 
 }
 
 
-.footer_class {
-    display: flex;
+.piedepagina{
+
+    display: inline-block;
     background-color: #282b30;
     font-size: 1.5vw;
-    height: 20vw;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 0px;
+    height: 20px;
+    left: 0;
+    bottom: 0;
     width: 100%;
+    text-align: center;
     color: darkkhaki;
 
 }
 
-.footer_class p:hover {
+.piedepagina p:hover {
     border: 1px solid rgb(244, 5, 5);
     background-color: rgb(21, 26, 23);
     transition: all 0.5s linear;
@@ -135,6 +147,6 @@ body {
 }
 
 
-@media screen {ma
+
+@media screen and (max-width:400px){
     
-}
