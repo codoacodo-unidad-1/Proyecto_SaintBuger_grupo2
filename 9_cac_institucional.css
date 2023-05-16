@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    background-color: rgb(106, 99, 86);
+}
+
+/*ESTILOS HEADER*/
+
+.cabecera {
+    left: 0;
+    top: 0;
+    background-color: #282b30;
+    padding-left: 11%;
+    height: 150px;
+
+}
+
+
+.cabecera a {
+    color: darkkhaki;
+    padding: .4rem;
+    text-decoration: none;
+    font-size: 4.5vw;
+}
+
+.cabecera nav li:hover {
+    background-color: rgb(53, 55, 54);
+    transition: all 0.8s linear;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.menu_nav {
+    display: flex;
+    padding-top: 40px;
+}
+
+.menu_nav ul li {
+    display: inline-block;
+    text-align: center;
+    padding-top: 30px;
+    padding-right: px;
+    padding-left: 30px;
+}
+
+.menu_nav ul {
+    margin: 0;
+    padding: 0:
+}
+
+.menu_nav li a {
+    display: block;
+    padding: px;
+    font-size: 1vw;
+}
+
+.icono {
+    display: flex;
+    padding-left: 15px;
+    padding-top: 17px;
+}
+
+.icono img {
+    width: 4vw;
+    height: 4vw;
+}
+
+.icono_2 {
+    display: flex;
+    padding-right: 2px;
+    padding-top: 11px;
+}
+
+.icono_2 img {
+    width: 4vw;
+    height: 4vw
+}
+
+
+/*ESTILOS ARTICLE*/
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.5vw;
+}
+
+.contenedor div {
+    background-color: rgb(106, 99, 86);
+    padding: 1em;
+}
+
+.contenedor div:hover {
+    border: 3px solid rgb(246, 244, 244);
+    background-color: rgb(53, 55, 54);
+    transition: all 0.7s linear;
+    border-radius: 5px;
+}
+
+
+.item1 p {
+    padding: 3vw;
+    gap: 0;
+    color: darkkhaki;
+}
+
+.foto {
+    padding-left: 10px;
+    width: 90%;
+    position: relative;
+    object-fit: cover;
+}
+
+.piedepagina {
+    display: inline-block;
+    background-color: #282b30;
+    font-size: 1.5vw;
+    height: 20px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: darkkhaki;
+}
+
+/*ESTILOS FOOTER*/
+
+.piedepagina p:hover {
+    border: 1px solid rgb(244, 5, 5);
+    background-color: rgb(21, 26, 23);
+    transition: all 0.5s linear;
+
+}
+
+/*CORTES RESPONSIVE*/
+
+/*CORTE PARA SMARTPHONE*/
+
+@media only screen and (max-width:412px) {
+    article.contenedor {
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+        padding: auto;
+    }
+    .cabecera {
+        left: 0;
+        top: 0;
+        background-color: #282b30;
+        padding-top: 50px;
+        padding-left: 5%;
+        height: 30px;
+    }
+    .menu_nav ul li {
+        display: block;
+        text-align: center;
+        padding-top: 0px;
+    }
+    .menu_nav li a {
+        display: block;
+        font: size 3px;
+        padding-top: ;
+    }
+
+    .icono {
+        display: flex;
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+}
+
+/*CORTE PARA TABLET*/
+
+@media only screen and (max-width:768px) {
+    .contenedor {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 0;
+        gap: 0;
+
+    }
+
+    .cabecera {
+        background-color: #282b30;
+        padding-top: 23px;
+        padding-left: 11%;
+        height: 150px;
+
+    }
+
+    .foto {
+        padding-left: 0px;
+        width: 100%;
+        position: relative;
+        object-fit: cover;
+
+    }
+
+    .menu_nav li a {
+        display: block;
+        font-size: 13px;
+
+    }
+
+    .icono {
+        display: flex;
+        padding-left: 15px;
+        padding-top: 13px;
+    }
+
+}
