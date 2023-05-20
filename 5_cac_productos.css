@@ -10,15 +10,6 @@ body {
 }
 /*color oscuro de fondo: #282b30;*/
 /* */
-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    background-color: black;
-    column-gap: 40vh;
-}
 
 .h1-header{
     color: darkkhaki;
