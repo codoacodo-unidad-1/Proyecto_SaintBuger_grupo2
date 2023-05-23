@@ -42,7 +42,7 @@ body {
 }
 
 #SB {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 3.5em;
     letter-spacing: 8px;
     color: darkkhaki;
@@ -56,18 +56,19 @@ body {
 .Nav__li a:hover {
     color: rgb(78, 162, 100);
 }
+
 .Menu__icon {
     display: none;
     opacity: 1;
-    color:  darkkhaki;
-  
- 
-    
+    color: darkkhaki;
+
+
+
 }
 
 .Menu ul li {
     display: inline-block;
-    color:  darkkhaki;
+    color: darkkhaki;
 }
 
 
@@ -102,8 +103,9 @@ body {
     padding-left: 90px;
     padding-right: 90px;
     padding-top: 8px;
+    padding-bottom: 0px;
     font-size: 1.5vw;
-    row-gap: 30px;
+    row-gap: 0px;
 }
 
 .contenedor_1 div {
@@ -113,10 +115,8 @@ body {
 
 .contenedor_1 div:hover {
     border: 3px solid darkkhaki;
-    ;
     background-color: rgb(53, 55, 54);
     transition: all 0.7s linear;
-    border-radius: 5px;
 }
 
 
@@ -136,11 +136,23 @@ body {
 
 
 .foto {
-    padding-left: 10px;
     width: 100%;
     position: relative;
     object-fit: cover;
+    padding: 0px;
 
+}
+
+
+.contenedor_2 {
+
+    display: grid;
+    grid-template-columns: auto;
+    padding-right: 110px;
+    padding-left: 110px;
+    padding-bottom: 90px;
+    padding-top: 90px;
+    background-color: rgb(53, 55, 54);
 }
 
 .item2 {
@@ -151,8 +163,8 @@ body {
     background-size: cover;
     height: 1200px;
     object-fit: cover;
-    padding: 10%;
-    border-radius: 60px;
+    border-radius: 0px;
+
 }
 
 .item2 p {
@@ -169,19 +181,6 @@ body {
 
 }
 
-
-.contenedor_2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto auto;
-    padding-right: 10px;
-    padding-left: 60px;
-    padding-top: 60px;
-    column-gap: 10px;
-    font-size: 1.5vw;
-
-}
-
 .contenedor_2 div {
     background-color: rgb(106, 99, 86);
     padding: 1em;
@@ -195,7 +194,6 @@ body {
     border-radius: 5px;
 }
 
-
 .foto_2 {
     padding-left: 10px;
     width: 90%;
@@ -203,6 +201,38 @@ body {
     object-fit: cover;
 
 }
+
+.contenedor_3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+    padding-right: 80px;
+    padding-left: 80px;
+    padding-top: 0px;
+    column-gap: 10px;
+    font-size: 1.5vw;
+    row-gap: 0px;
+
+}
+
+.contenedor_3 div:hover {
+    border: 3px solid darkkhaki;
+    ;
+    background-color: rgb(53, 55, 54);
+    transition: all 0.7s linear;
+    border-radius: 5px;
+}
+
+.foto_3 {
+    padding-right: 30PX;
+    padding-left: 30px;
+    padding-top: 30PX;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+}
+
+
 
 
 /*ESTILOS FOOTER*/
@@ -241,6 +271,7 @@ body {
 .Dire a:visited {
     color: black;
 }
+
 .Redes__item a {
     font-size: 1.5rem;
     display: block;
@@ -259,30 +290,22 @@ body {
 
 /*CORTES RESPONSIVE*/
 
+/*CORTE PARA ESCRITORIO 1280 */
+    
+
 
 /*CORTE PARA TABLET*/
 
-@media only screen and (max-width: 768px) {
-   
+
+/*CORTE PARA TABLET*/
 
 
-    .item2 {
-        grid-column: 2 span;
-        background-image: url(Img/foto_institucional_8.jpg);
-        object-fit: cover;
-        width: 100%;
-        height: 650px;
-    }
-    .item1 p {
-        font-size: 1.5rem;
+@media (max-width: 768px) and (max-width: 1240px) {
+
+    .Titulo {
+        flex-shrink: 2;
     }
 
-    .item2 p {
-        padding: 60px;
-        gap: 0;
-        color: darkkhaki;
-        font-size: 3vw;
-    }
 
     .Menu__icon {
         display: block;
@@ -299,17 +322,18 @@ body {
     .Menu ul {
         display: none;
     }
+
     .Menu ul.Show {
         display: block;
     }
-    
+
     .Menu ul li {
         display: block;
         color: blanchedalmond;
         text-align: center;
 
     }
-    
+
     .Menu ul li a {
         font-size: 1.2rem;
         display: block;
@@ -317,46 +341,72 @@ body {
         transition: all 0.4 linear;
         border-radius: 5px;
     }
-    
+
     .Menu ul li a:hover {
         background-color: #a18ba3;
     }
-
-    .contenedor_1 {
-        display: grid;
-        grid-template-columns: auto auto;
-        padding: 0;
-        gap: 0;
-    }
-
-    .Redes__item a {
-        font-size: 1rem;
-        display: block;
-        padding: 1rem 0.5rem;
-        transition: all 0.4 linear;
-        border-radius: 5px;
-        transition: 2s;
     
-    }
-}
-
-/*CORTE PARA SMARTPHONE*/
-
-@media only screen and (max-width:412px) {
     .contenedor_1 {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
-           width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+        padding-top: 0px;
+    }
+    .item1 p {
+        font-size: 1.5rem;
     }
 
     .contenedor_2 {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        padding-right: 10px;
-        padding-left: 10px;
+        column-span: 2 span;
+        padding: 0px;
         row-gap: 10px;
-        font-size: 2.5vw;
+        font-size: 1.5rem;
     }
+    
+    .item2 {
+        grid-column: 1 span;
+        background-image: url(Img/foto_institucional_8.jpg);
+        object-fit: cover;
+        width: 100%;
+        height: 650px;
+    }
+
+    .contenedor_3 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%; 
+        padding: 10px;
+    }
+    
+    .foto_3 {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        object-fit: cover;
+    }
+    
+   
+
+
+    
+
+    .item2 p {
+        padding: 50px;
+        gap: 0;
+        color: darkkhaki;
+        font-size: 1.5rem;
+    }
+
+
+}
+
+/*CORTE PARA SMARTPHONE*/
+
+@media (max-width:412px) and (max-width: 768px) {
 
     .cabecera {
         left: 0;
@@ -374,10 +424,10 @@ body {
     #SB {
         font-size: 1.2em;
     }
-    
+
     .Menu__icon {
         display: block;
-        color:  darkkhaki;
+        color: darkkhaki;
         font-size: 1.5em;
         cursor: pointer;
     }
@@ -390,16 +440,17 @@ body {
     .Menu ul {
         display: none;
     }
+
     .Menu ul.Show {
         display: block;
     }
-    
+
     .Menu ul li {
         display: block;
         color: blanchedalmond;
         text-align: center;
     }
-    
+
     .Menu ul li a {
         font-size: 1.2rem;
         display: block;
@@ -414,25 +465,66 @@ body {
         padding-top: 10px;
     }
 
-    .item2 {
-        background-image: url(Img/foto_institucional_8.jpg);
-        object-fit: cover;
+
+    .contenedor_1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
         width: 100%;
-        padding-right: 5px;
-        max-width: 700px;
-        border-radius: 90px;
+        padding-right: 0px;
+        padding-left: 0px;
+
+
+    }
+    .item1 p {
+        font-size: 1rem;
+        padding-left: 10px;
+    }
+
+    .foto {
+        width: 100%;
+    }
+
+
+    .contenedor_2 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        padding: 0px;
+
+    }
+    .item2 {
+        object-fit: cover;
+        width: 100%;  
     }
     
-
     .item2 p {
-
-        position: relative;
-        padding: 40PX;
-        padding-top: 100px;
+        padding: 20px;
         gap: 0;
         color: darkkhaki;
         font-size: 1.3rem;
     }
+
+
+    .contenedor_3 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+
+
+    }
+
+    .foto_3 {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        object-fit: cover;
+    }
+    
+    
+
 
 
 
