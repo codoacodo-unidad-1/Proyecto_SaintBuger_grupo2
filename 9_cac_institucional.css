@@ -11,15 +11,6 @@ body {
 
 /*ESTILOS HEADER*/
 
-/* .cabecera { 
-    left: 0;
-    top: 0;
-    background-color: #282b30;
-    padding-left: 11%;
-    height: 150px;
-    width: 100%;
-
-}*/
 
 #Grid_header {
     grid-area: footer;
@@ -30,7 +21,9 @@ body {
     margin: 0 auto;
     background-color: #282b30;
     z-index: 10;
-    height: 100px;
+    position: fixed;
+    height: 110px;
+
 }
 
 .Flex__Cointainer {
@@ -38,8 +31,8 @@ body {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    height: 100px;
     background-color: #282b30;
+    padding-top: 10px;
 }
 
 #SB {
@@ -99,7 +92,7 @@ body {
     grid-template-rows: auto auto auto;
     padding-left: 90px;
     padding-right: 90px;
-    padding-top: 8px;
+    padding-top: 90px;
     padding-bottom: 0px;
     font-size: 1.5vw;
     row-gap: 0px;
@@ -210,6 +203,7 @@ body {
     padding-right: 80px;
     padding-left: 80px;
     padding-top: 0px;
+    padding-bottom: 0px;
     column-gap: 10px;
     font-size: 1.5vw;
     row-gap: 0px;
@@ -218,7 +212,6 @@ body {
 
 .contenedor_3 div:hover {
     border: 3px solid darkkhaki;
-    ;
     background-color: rgb(53, 55, 54);
     transition: all 0.7s linear;
     border-radius: 5px;
@@ -226,9 +219,7 @@ body {
 .contenedor_3 a {
     text-decoration: none;
     color:rgb(78, 162, 100);
-    padding-left: 20rem;
-    padding-bottom: 10rem;
-   
+    padding-left: 20rem;   
 }
 
 .foto_3 {
@@ -245,11 +236,12 @@ body {
 
 /*ESTILOS FOOTER*/
 
-#Grid_footer {
+.footer {
     grid-area: footer;
-    box-sizing: 1em;
+    box-sizing: 1.5rem;
     background-color: #282b30;
     text-decoration: none;
+    position: fixed;
 }
 
 
@@ -301,7 +293,10 @@ body {
 
 
 @media only screen and (max-width: 959px)  {
-    
+
+    .Titulo {
+        flex-shrink: 2;
+    }
     
     .Menu__icon  {
         display: block;
@@ -309,14 +304,6 @@ body {
         font-size: 1.5em;
         cursor: pointer;
     }
-    .Titulo {
-        flex-shrink: 2;
-    }
-    
-    #SB {
-        font-size: 3.5em;
-    }
-
 
     .Menu {
         width: 100%;
@@ -324,6 +311,10 @@ body {
     }
 
     .Menu ul {
+        display: none;
+    }
+
+    .Menu ul.Show {
         display: block;
     }
 
@@ -331,7 +322,6 @@ body {
         display: block;
         color:  darkkhaki;
         text-align: center;
-
     }
 
     .Menu ul li a {
@@ -345,7 +335,16 @@ body {
     .Menu ul li a:hover {
         background-color: #a18ba3;
     }
-    
+    .Menu ul li a:hover {
+        border: 1px solid darkkhaki;
+        background-color:rgb(106, 99, 86);
+        transition: all 0.7s linear;
+        border-radius: 5px;
+    }
+     
+    #SB {
+        font-size: 3.5em;
+    }
     .Nav__li li a {
         display: block;
         color: darkkhaki;
@@ -355,9 +354,9 @@ body {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
-        padding-right: 0px;
+        padding-top: 90px;
         padding-left: 0px;
-        padding-top: 0px;
+        padding-right: 0px;
        
     }
     .item1 p {
@@ -412,9 +411,7 @@ body {
 }
 
 /*CORTE PARA SMARTPHONE*/
-@media only screen and (max-width:480px) {
 
-}
 @media only screen and (max-width:480px) {
 
     
@@ -424,14 +421,7 @@ body {
     }
 
     #SB {
-        font-size: 1.2em;
-    }
-
-    .Menu__icon {
-        display: block;
-        color: darkkhaki;
-        font-size: 1.5em;
-        cursor: pointer;
+        font-size: 1.7em;
     }
 
     .Menu {
@@ -440,7 +430,7 @@ body {
     }
 
     .Menu ul {
-        display: block;
+      
     }
 
     .Menu ul.Show {
@@ -466,13 +456,13 @@ body {
         padding-left: 15px;
         padding-top: 10px;
     }
-
+    
     .contenedor_1 {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         width: 100%;
-        padding-right: 0px;
-        padding-left: 0px;
+        padding-top: 110px;
+       
     }
 
     .contenedor_1 p {
