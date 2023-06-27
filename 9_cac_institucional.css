@@ -28,7 +28,7 @@ body {
 
 .Flex__Cointainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     background-color: #282b30;
@@ -292,7 +292,7 @@ body {
 /*CORTE PARA TABLET*/
 
 
-@media only screen and (max-width: 959px)  {
+@media only screen and (max-width: 768px)  {
 
     .Titulo {
         flex-shrink: 2;
@@ -340,6 +340,8 @@ body {
         background-color:rgb(106, 99, 86);
         transition: all 0.7s linear;
         border-radius: 5px;
+        padding-right: 25px;
+        padding-left: 25px;
     }
      
     #SB {
@@ -354,7 +356,7 @@ body {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
-        padding-top: 90px;
+        padding-top: 125px;
         padding-left: 0px;
         padding-right: 0px;
        
@@ -412,7 +414,7 @@ body {
 
 /*CORTE PARA SMARTPHONE*/
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:479px) {
 
     
 
@@ -421,7 +423,7 @@ body {
     }
 
     #SB {
-        font-size: 1.7em;
+        font-size: 1em;
     }
 
     .Menu {
@@ -429,9 +431,6 @@ body {
         margin-top: 1em;
     }
 
-    .Menu ul {
-      
-    }
 
     .Menu ul.Show {
         display: block;
@@ -449,6 +448,11 @@ body {
         padding: 0.5rem 0;
         transition: all 0.4 linear;
         border-radius: 5px;
+    }
+    .Menu ul li a:hover {
+        border-radius: 5px;
+        padding-right: 25px;
+        padding-left: 25px;
     }
 
     .icono {
