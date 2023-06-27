@@ -2,89 +2,162 @@ import sqlite3
 # Configurar la conexión a la base de datos SQLite
 DATABASE = 'saint_burguer.db'
 
-def get_db_connection(): 
-    conn = sqlite3.connect(DATABASE) 
-    conn.row_factory = sqlite3.Row 
+def conectar():
+    conn = sqlite3.connect(DATABASE)
+    conn.row_factory = sqlite3.Row
     return conn
 
-# Crear la tabla 'burguers' si no existe
 
-conn = get_db_connection() 
-cursor = conn.cursor() 
-cursor.execute(''' 
-            CREATE TABLE IF NOT EXISTS burguers ( 
-            codigo INTEGER PRIMARY KEY, 
-            descripcion TEXT NOT NULL, 
-            cantidad INTEGER NOT NULL, 
-            precio REAL NOT NULL ) ''') 
-conn.commit() 
-cursor.close() 
-conn.close()
-
-
-
-# Limpiamos la pantalla    
-print("\033[H\033[J")       
-    
-
-# -------------------------------------------------------------------
-# Definimos la clase "Inventario"
-# -------------------------------------------------------------------
-class Producto:
-    def __init__(self, codigo, descripcion, cantidad, precio):
-        self.codigo=codigo
-        self.descripcion=descripcion    
-        self.cantidad=cantidad
-        self.precio=precio
+#----------------------------------------------
+# Esta funcion crea la tabla "productos" en la
+# base de datos, en caso de que no exista.
+#----------------------------------------------
+def crear_tabla():
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute("""
+                CREATE TABLE IF NOT EXISTS burguers (
+                    codigo INT PRIMARY KEY,
+                    descripcion VARCHAR(255),
+                    stock INT,
+                    precio FLOAT)
+            """)
+    conn.commit()
+    cursor.close()
+    conn.close()
 
 
-class Inventario: 
-    def __init__(self): 
-        self.conexion = get_db_connection() 
-        self.cursor = self.conexion.cursor()  
-        
-    def agregar_producto(self, codigo, descripcion, cantidad, precio):
-        producto_existente =self.consultar_producto(codigo)
-        if producto_existente:
-            print("Ya existe un producto con este código.")
-            return False
-        #nuevo_producto = Producto(codigo, descripcion, cantidad, precio)
-        self.curso.execute("INSERT INTO burguers VALUES (?,?,?,?)" , (codigo,descripcion,cantidad,precio))
-        self.conexion.commit()
-        return True       
+#----------------------------------------------
+# Esta funcion da de alta un producto en la
+# base de datos.
+#----------------------------------------------
+def alta_producto(cod, desc, stock, valor):
+    print()
+    try:
+        conn = conectar()
+        cursor = conn.cursor()
+        cursor.execute("""
+                    INSERT INTO burguers(codigo, descripcion, stock, precio)
+                    VALUES(?,?,?,?) """,(cod, desc, stock, valor))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    except:
+        print("Error: Producto no creado.")
+    else:
+        print ("Producto creado correctamente.")
+    print("-"*30)
 
-
-    def consultar_producto(self,codigo):
-        self.cursor.execute ("SELECT * FROM burguers WHERE codigo= ?" ,  (codigo,))
-        row = self.cursor.fetchone()
-        if row:
-            codigo, descripcion, cantidad, precio = row
-        return Producto(codigo, descripcion,cantidad,precio)
-        return False
-    
-            
-    def modificar_producto(self, codigo,nueva_descripcion,nueva_cantidad,nuevo_precio):
-        producto = self.consultar(codigo)
-        if producto:
-            producto.modificar(nueva_descripcion,nueva_cantidad,nuevo_precio)
-            self.cursor.execute("UPDATE  burguers SET descripcion = ?, cantidad= ?, precio = ? where codigo=?",(nueva_descripcion,nueva_cantidad, nuevo_precio, codigo))
-            self.conexion.commit()
-        
-    def listar_productos(self):
+#----------------------------------------------
+# Muestra en la pantalla los datos de un  
+# producto a partir de su código.
+#----------------------------------------------
+def consultar_producto(cod):
+    try:
+        conn = conectar()
+        cursor = conn.cursor()
+        cursor.execute("""SELECT * FROM burguers 
+                            WHERE codigo=?""", (cod,))
+        producto = cursor.fetchone()
+        print()
+        print(f"Código     : {producto['codigo']}")
+        print(f"Descripción: {producto['descripcion']}")
+        print(f"Stock      : {producto['stock']}")
+        print(f"Precio     : {producto['precio']}")
         print("-"*30)
-        self.cursor.execute("SELECT * FROM burguers")
-        rows= self.cursor.fetchall()
-        for row in rows:
-            codigo,descripcion,cantidad,precio = row
-            print(f"Código:{codigo}")
-            print(f"descripción: {descripcion}")
-            print(f"Cantidad: {precio}")
-            print("-"*30)
-     
-    def eliminar_producto(self,codigo):
-        self.cursor.execute("DELETE FROM burguers WHERE codigo= ?",(codigo,))
-        if self.cursor.rowcount > 0:
-            print("Producto eliminado.")
-            self.conexion.commit()
-        else:
-            print("Producto no encontrado.")
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return producto
+    except:
+        print("Error posible: registro no encontrado")
+        print("-"*30)
+        return False
+
+
+#----------------------------------------------
+# Modifica los datos de un producto a partir
+# de su código.
+#----------------------------------------------
+def modificar_producto(cod, nueva_desc, nuevo_stock, nuevo_precio):
+    producto = consultar_producto(cod)
+    if producto:
+        print("\nNuevos datos del producto:")
+        print(f"Descripción: {nueva_desc}")
+        print(f"Stock      : {nuevo_stock}")
+        print(f"Precio     : {nuevo_precio}")
+
+        conn = conectar()
+        cursor = conn.cursor()
+        cursor.execute("""UPDATE burguers SET descripcion=?, stock=?, precio=?
+                            WHERE codigo=?""", (nueva_desc, nuevo_stock, nuevo_precio, cod))
+        conn.commit()
+        
+        print("El producto ha sido modificado correctamente.")
+    else:
+        print("El producto no se encuentra en la base de datos.")
+    
+    cursor.close()
+    conn.close()
+    print("-"*30)
+    
+    
+def eliminar_producto(cod):
+    try:
+        conn = conectar()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM burguers WHERE codigo= ?", (cod,))
+        producto = cursor.fetchone()
+        print()
+        print("Producto eliminado.")
+        conn.commit()
+        cursor.close()
+        conn.close()
+    except:
+        print("Error posible: registro no encontrado")
+        print("-"*30)
+        return False    
+
+
+#----------------------------------------------
+# Lista todos los productos en la base de datos.
+#----------------------------------------------
+def listar_productos():
+    try:
+        conn = conectar()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM burguers")
+        productos = cursor.fetchall()
+        print("\nListado de productos:")
+        print("-" * 30)
+        for producto in productos:
+            print(f"Código     : {producto['codigo']}")
+            print(f"Descripción: {producto['descripcion']}")
+            print(f"Stock      : {producto['stock']}")
+            print(f"Precio     : {producto['precio']}")
+            print("-" * 30)
+        conn.commit()
+        cursor.close()
+        conn.close()
+    except:
+        print("Error al listar los productos.")
+        print("-" * 30)
+
+
+#----------------------------------------------
+# Ejemplos de uso de las funciones implementadas
+#----------------------------------------------
+#crear_tabla()
+
+#alta_producto(1, "Genesis", 30, 1600)
+#lta_producto(2, "Adam", 30, 1900)
+
+consultar_producto(1)
+consultar_producto(2)
+
+#alta_producto(3, "Moises", 30, 1900)
+#modificar_producto(3, "Goliath", 30, 2000)
+#consultar_producto(3)
+#eliminar_producto(3)
+
+listar_productos()
